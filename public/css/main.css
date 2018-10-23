@@ -1,0 +1,117 @@
+html {
+
+}
+
+body {
+    box-sizing: content-box;
+    font-family: "Krenfen", "Ubuntu", sans-serif;
+    background: black;
+}
+
+@font-face {
+    font-family: 'Krenfen';
+    src: url('../fonts/Krenfen-Regular.otf');
+}
+
+.jumbo {
+    background: black;
+    color: white;
+}
+
+.content {
+    font-family: futura-pt,sans-serif;
+}
+
+.card-title {
+    font-family: Krenfen,sans-serif;
+}
+
+.btn-primary{
+    background: darkred;
+    border-color: firebrick;
+}
+
+.btn-primary:hover{
+    background: grey;
+    border-color: dimgray;
+}
+
+.transparent {
+    background: transparent;
+}
+
+.center {
+    text-align: center;
+}
+
+.card {
+    margin-bottom: 10px;
+}
+
+.card-img-top-container {
+    display: block;
+    width: 100%;
+    position: relative;
+    height: 0;
+    padding: 56.25% 0 0 0;
+    overflow: hidden;
+    background: black;
+    min-height: 200px;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px -4px 5px 9px rgba(0,0,0,0.5);
+}
+
+.card-img-top {
+    position: absolute;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.band-photo {
+    background: url("../img/band.jpg") no-repeat top center;
+    background-size: cover;
+    #min-height: 200px;
+    box-shadow: inset -8px -30px 20px black;
+
+}
+
+.section {
+    background: url("../img/fire.svg") no-repeat top center #000000;
+    background-size: contain;
+
+}
+
+.logo {
+    font-size: 2.5em;
+}
+
+.screen {
+    border-radius: 5px;
+    padding-top: 100px;
+    z-index: 1;
+
+    min-height: 400px;
+
+    margin: auto;
+
+    transition: opacity .5s;
+}
+
+.footer {
+    width: 100%;
+    min-height: 100px;
+}
+
+.footer-link {
+    color: rgba(255,255,255,.5);
+}
+
+.footer-link:hover {
+    color: rgba(255,255,255,.75);
+}
