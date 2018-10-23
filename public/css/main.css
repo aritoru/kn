@@ -26,6 +26,18 @@ body {
     font-family: Krenfen,sans-serif;
 }
 
+.title {
+    font-family: Krenfen,sans-serif;
+    color: #ffffff;
+}
+
+.bandlead {
+    color: gray;
+}
+.bandlead strong {
+    color: whitesmoke;
+}
+
 .btn-primary{
     background: darkred;
     border-color: firebrick;
@@ -114,4 +126,59 @@ body {
 
 .footer-link:hover {
     color: rgba(255,255,255,.75);
+}
+
+/* Header Parallax Element Style*/
+.paral {
+    background-attachment: fixed;
+    min-height: 600px;
+    background-size: cover;
+    background-position: top center;
+}
+
+
+
+.paral p {
+    font-size: 24px;
+    color:#f5f5f5;
+    text-align: center;
+    line-height: 60px;
+}
+
+/* Heading for Parallax Section */
+.paral h1 {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 60px;
+    text-align: center;
+    padding-top: 60px;
+    line-height: 100px;
+}
+
+.paralsec {
+    background-image: url("/img/band2.jpg");
+}
+
+@media (max-width: 576px) {
+    .paral {
+        min-height: 200px;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-attachment: unset;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 1000px) {
+    /* Solo se aplicarán entre los tamaños indicados */
+    .paral {
+        min-height: 200px;
+        background-size: contain;
+    }
+}
+
+@media (min-width: 1001px) {
+    /* Solo se aplicarán entre los tamaños indicados */
+    .paral {
+        min-height: 600px;
+        background-size: cover;
+    }
 }

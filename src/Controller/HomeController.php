@@ -21,5 +21,12 @@ class HomeController extends AbstractController
     {
         return $this->render('home/home.html.twig');
     }
+    /**
+     * @Route("/band", name="band")
+     */
+    public function band()
+    {
+        return $this->render('home/band.html.twig');
+    }
 
 }
