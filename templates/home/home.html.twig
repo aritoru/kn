@@ -20,60 +20,9 @@
     <div class="row jumbotron transparent">
         <div class="col">
             <div class="row">
-                <div class="col-sm">
-                    <div class="card center shadow-lg" style="width: 20rem;">
-                        <div class="card-img-top-container">
-                            <img class="card-img-top" src="img/banner4.jpg" alt="Card image cap">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                        <div class="card-footer text-muted">
-                            2 days ago
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-sm">
-                    <div class="card center shadow-lg" style="width: 20rem;">
-                        <div class="card-img-top-container">
-                            <img class="card-img-top" src="img/banner5.jpg" alt="Card image cap">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">KRPNFPN firma con LO</h5>
-                            <p class="card-text">Nos complace enormemente informaros de que la banda ha fichado por The Label One Music (LO).</p>
-                            <a href="#" class="btn btn-primary">Saber más</a>
-                        </div>
-                        <div class="card-footer text-muted">
-                            2 days ago
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="col-sm">
-                    <div class="card center shadow-lg" style="width: 20rem;">
-                        <div class="card-img-top-container">
-                            <img class="card-img-top" src="img/banner6.jpg" alt="Card image cap">
-                        </div>
-
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                        <div class="card-footer text-muted">
-                            2 days ago
-                        </div>
-                    </div>
-
-
-                </div>
-
-
-
+                {% for announce in announces %}
+                    {{ include('/partials/_announce.html.twig', {'announce':announce}) }}
+                {% endfor %}
             </div>
 
             <div class="row">

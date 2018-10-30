@@ -158,6 +158,14 @@ body {
     background-image: url("/img/band2.jpg");
 }
 
+.announce_header {
+    min-height: 300px !important;
+}
+
+.nav-link-active {
+    color: darkred !important;
+}
+
 @media (max-width: 576px) {
     .paral {
         min-height: 200px;

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Announce;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -19,7 +20,9 @@ class HomeController extends AbstractController
      */
     public function home()
     {
-        return $this->render('home/home.html.twig');
+        $entityManager = $this->getDoctrine()->getManager();
+        $announces = $entityManager->getRepository(Announce::class)->findBy([],['date' => 'DESC'],3);
+        return $this->render('home/home.html.twig', ['announces' => $announces]);
     }
     /**
      * @Route("/band", name="band")

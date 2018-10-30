@@ -1,0 +1,23 @@
+{% extends('base.html.twig') %}
+{% block announces_block %} nav-link-active {% endblock %}
+{% block body %}
+
+    {% for announce in announces %}
+    <div class="jumbotron paral paralsec announce_header" style='background-image: url("/{{ announce.imageUrl }}") !important;'>
+
+    </div>
+
+    <div class="container content center">
+        <h4>{{ announce.date|date('d-m-Y') }}</h4>
+        <h1 class="title display-6">{{ announce.title }}</h1>
+
+        <p class="bandlead">{{ announce.resume }}</p>
+        <hr class="my-4">
+        <hr class="my-4">
+        <a href="{{ path('announce_detail', {'id':announce.id}) }}" class="btn btn-primary">Saber más</a>
+
+        <hr class="my-4">
+        <hr class="my-4">
+    </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,17 @@
+
+
+<div class="col-sm">
+    <div class="card center shadow-lg" style="width: 20rem;">
+        <div class="card-img-top-container">
+            <img class="card-img-top" src="{{ announce.imageUrl }}" alt="Card image cap">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ announce.title }}</h5>
+            <p class="card-text">{{ announce.resume }}</p>
+            <a href="{{ path('announce_detail', {'id':announce.id}) }}" class="btn btn-primary">Saber más</a>
+        </div>
+        <div class="card-footer text-muted">
+            {{ announce.date|date('d-m-Y') }}
+        </div>
+    </div>
+</div>

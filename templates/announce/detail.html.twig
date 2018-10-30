@@ -1,0 +1,14 @@
+{% extends('base.html.twig') %}
+{% block body %}
+    <div class="jumbotron paral paralsec" style='background-image: url("/{{ announce.imageUrl }}") !important;'>
+
+    </div>
+
+    <div class="container content center">
+        <h4>{{ announce.date|date('d-m-Y') }}</h4>
+        <h1 class="title display-4">{{ announce.title }}</h1>
+        <h3 class="title display-10">{{ announce.resume }}</h3>
+        <p class="bandlead">{{ announce.content }}</p>
+    </div>
+
+{% endblock %}
