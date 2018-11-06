@@ -31,19 +31,36 @@ body {
     color: #ffffff;
 }
 
+.announce_body {
+    background: url("../img/1x/border.png") no-repeat top center;
+    background-size: cover;
+
+}
+
+.announce_title {
+    font-family: Krenfen,sans-serif;
+    color: whitesmoke;
+}
+
+.announce_date {
+    font-family: Krenfen,sans-serif;
+    color: whitesmoke;
+    font-size: small;
+}
+
 .bandlead {
-    color: gray;
+    color: #eeeeee;
 }
 .bandlead strong {
     color: whitesmoke;
 }
 
-.btn-primary{
+.btn-primary, .btn-primary:visited, .btn-primary:active {
     background: darkred;
     border-color: firebrick;
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
     background: grey;
     border-color: dimgray;
 }
@@ -88,15 +105,13 @@ body {
 .band-photo {
     background: url("../img/band.jpg") no-repeat top center;
     background-size: cover;
-    #min-height: 200px;
     box-shadow: inset -8px -30px 20px black;
-
+    min-height: 200px;
 }
 
 .section {
     background: url("../img/fire.svg") no-repeat top center #000000;
     background-size: contain;
-
 }
 
 .logo {
@@ -160,10 +175,13 @@ body {
 
 .announce_header {
     min-height: 300px !important;
+    background-position: top center;
+    background-size: cover;
 }
 
 .nav-link-active {
     color: darkred !important;
+    font-weight: bolder;
 }
 
 @media (max-width: 576px) {

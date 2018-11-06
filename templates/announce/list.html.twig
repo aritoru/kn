@@ -3,21 +3,22 @@
 {% block body %}
 
     {% for announce in announces %}
-    <div class="jumbotron paral paralsec announce_header" style='background-image: url("/{{ announce.imageUrl }}") !important;'>
+        <div class="container">
 
-    </div>
 
-    <div class="container content center">
+    <div class="container content center jumbotron announce_body">
+        <div class="announce_header" style='background-image: url("/{{ announce.imageUrl }}") !important;'>
+
+        </div>
+        <hr class="my-4">
         <h4>{{ announce.date|date('d-m-Y') }}</h4>
-        <h1 class="title display-6">{{ announce.title }}</h1>
+        <h1 class="announce_title display-6">{{ announce.title }}</h1>
 
         <p class="bandlead">{{ announce.resume }}</p>
         <hr class="my-4">
-        <hr class="my-4">
         <a href="{{ path('announce_detail', {'id':announce.id}) }}" class="btn btn-primary">Saber más</a>
 
-        <hr class="my-4">
-        <hr class="my-4">
     </div>
+        </div>
     {% endfor %}
 {% endblock %}
