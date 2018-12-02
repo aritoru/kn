@@ -32,4 +32,12 @@ class HomeController extends AbstractController
         return $this->render('home/band.html.twig');
     }
 
+    /**
+     * @Route("/social", name="social")
+     */
+    public function social()
+    {
+        return $this->render('home/social.html.twig');
+    }
+
 }
