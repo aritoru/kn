@@ -37,7 +37,15 @@ class HomeController extends AbstractController
      */
     public function social()
     {
-        return $this->render('home/social.html.twig');
+        return $this->render('home/social.html.twig', ['appId' => getenv('facebookAppId')]);
+    }
+
+    /**
+     * @Route("/media", name="media")
+     */
+    public function media()
+    {
+        return $this->render('home/media.html.twig');
     }
 
 }

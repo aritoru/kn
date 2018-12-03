@@ -18,6 +18,24 @@ body {
     color: white;
 }
 
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: darkred;
+    font-family: Krenfen,sans-serif;
+
+}
+
+.custom-nav-pill {
+    color: #fff !important;
+    font-family: Krenfen,sans-serif;
+
+}
+
+.center-pills {
+    display: flex;
+    justify-content: center;
+}
+
 .content {
     font-family: futura-pt,sans-serif;
 }
@@ -51,6 +69,11 @@ body {
 }
 .bandlead strong {
     color: whitesmoke;
+}
+
+.lyric {
+    font-size: small;
+    color: #eeeeee;
 }
 
 .btn-primary, .btn-primary:visited, .btn-primary:active {
