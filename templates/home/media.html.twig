@@ -2,37 +2,17 @@
 {% block media_block %} nav-link-active {% endblock %}
 {% block body %}
     <div class="container content center jumbotron announce_body text-center">
-        <ul class="nav nav-pills center-pills" id="pills-tab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active custom-nav-pill" id="pills-profile-tab" data-toggle="pill" href="#audio" role="tab" aria-controls="audio" aria-selected="false">audio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link custom-nav-pill" id="pills-profile-tab" data-toggle="pill" href="#video" role="tab" aria-controls="video" aria-selected="false">video</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link custom-nav-pill" id="pills-home-tab" data-toggle="pill" href="#letras" role="tab" aria-controls="letras" aria-selected="true">letras</a>
-            </li>
 
-            <li class="nav-item">
-                <a class="nav-link custom-nav-pill" id="pills-contact-tab" data-toggle="pill" href="#fotos" role="tab" aria-controls="fotos" aria-selected="false">fotos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link custom-nav-pill" id="pills-contact-tab" data-toggle="pill" href="#fondos" role="tab" aria-controls="fondos" aria-selected="false">fondos</a>
-            </li>
-
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade" id="letras" role="tabpanel" aria-labelledby="letras-tab">
-                {{ include('partials/mediatabs/_lyrics.html.twig') }}
-            </div>
-            <div class="tab-pane fade show active" id="audio" role="tabpanel" aria-labelledby="audio-tab">
-                {{ include('partials/mediatabs/_audio.html.twig') }}
-            </div>
-            <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
-                {{ include('partials/mediatabs/_video.html.twig') }}
-            </div>
-            <div class="tab-pane fade" id="fotos" role="tabpanel" aria-labelledby="fotos-tab">...</div>
-            <div class="tab-pane fade" id="fondos" role="tabpanel" aria-labelledby="fondos-tab">...</div>
-        </div>
+        {{ include('partials/_nav_pills.html.twig', {
+            'id': 'media',
+            'path': 'mediatabs',
+            'list' : {
+                'audio':'fas fa-headphones',
+                'video':'fas fa-video',
+                'letras':'fas fa-align-justify',
+                'fotos':'fas fa-camera',
+                'fondos':'fas fa-image'
+            }
+        }) }}
     </div>
 {% endblock %}

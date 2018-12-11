@@ -1,0 +1,17 @@
+<div class="nav-header">
+    <ul class="nav nav-pills center-pills" id="pills-tab-{{ id }}" role="tablist">
+        {% for element, icon in list %}
+        <li class="nav-item">
+            <a class="nav-link {% if loop.first %}active{% endif %} custom-nav-pill" id="pills-{{ id~element|normalize }}-tab" data-toggle="pill" href="#{{ id~element|normalize }}" role="tab" aria-controls="{{ id~element|normalize }}" aria-selected="{% if loop.first %}true{% else %}false{% endif %}"><i class="{{ icon }}"></i> {{ element }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="tab-content" id="myTabContent-{{ id }}">
+    {% for element, icon in list %}
+    <div class="tab-pane fade {% if loop.first %}show active{% endif %}" id="{{ id~element|normalize }}" role="tabpanel" aria-labelledby="{{ id~element|normalize }}-tab">
+
+        {{ include('partials/' ~ path ~ '/' ~ id|pathize ~ '/_' ~ element|normalize ~ '.html.twig') }}
+    </div>
+    {% endfor %}
+</div>

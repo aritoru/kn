@@ -36,6 +36,14 @@ body {
     justify-content: center;
 }
 
+.nav-header {
+    border-color: whitesmoke;
+    border-width: 1px;
+    border-radius: 5px;
+    background: #111111;
+    margin-top: 5px;
+}
+
 .content {
     font-family: futura-pt,sans-serif;
 }
@@ -79,6 +87,7 @@ body {
 .btn-primary, .btn-primary:visited, .btn-primary:active {
     background: darkred;
     border-color: firebrick;
+    font-family: Krenfen,sans-serif;
 }
 
 .btn-primary:hover {
