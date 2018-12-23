@@ -3,14 +3,14 @@
 <div class="shadow-lg container-fluid jumbo">
     <div class="row">
     <div class="jumbotron col-sm-12 col-md-6 band-photo center">
-
     </div>
     <div class="col-sm-12 col-md-6">
         <div class="jumbotron transparent center section">
             <p><img class="portada" src="/img/pack.svg"/></p>
-            <h3>¡reserva ya tu copia de IGNIS!</h3>
+            <a class="btn btn-primary btn-lg btn-dark" href="#" role="button">¡reserva ya IGNIS!</a>
+            <hr>
             <p>no te quedes sin una copia haciendo tu pre-reserva.<br>¡el pack contiene una camiseta exclusiva!</p>
-            <a class="btn btn-primary btn-lg btn-dark" href="#" role="button">¡reserva ahora!</a>
+
         </div>
     </div>
     </div>
@@ -36,5 +36,24 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(function() {
+            anime.timeline({loop: false})
+                .add({
+                    targets: '.portada',
+                    scale: [14,1],
+                    opacity: [0,1],
+                    easing: "easeOutCirc",
+                    duration: 1800,
+                    delay: function(el, i) {
+                        return 800 * i;
+                    }
+                });
+        });
+    </script>
+
 {% endblock %}
 

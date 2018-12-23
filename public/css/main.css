@@ -219,6 +219,7 @@ body {
     font-weight: bolder;
 }
 
+
 @media (max-width: 576px) {
     .paral {
         min-height: 200px;

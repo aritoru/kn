@@ -27,7 +27,7 @@ a:hover {
 html,
 body {
     height: 100%;
-    background: url("../img/fire.svg") no-repeat center center #000000;
+    background: no-repeat center center #000000;
     background-size: contain;
 }
 
@@ -43,10 +43,42 @@ body {
     max-width: 70em;
 }
 
-.cover-heading {
-    font-size: 15vmin;
+.cover-background {
+    z-index: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    width: 100%;
+    opacity: .8;
 }
 
+.cover-heading {
+    font-size: 14vmin;
+    z-index: 2;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+
+}
+
+.lead {
+    z-index: 2;
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+
+}
+
+.cover-heading .word {
+    display: inline-block;
+    line-height: 1em;
+}
 
 /*
  * Header
