@@ -61,6 +61,11 @@ body {
     background: black;
 }
 
+.portada {
+    width: 50%;
+    border: darkred;
+}
+
 .announce_title {
     font-family: Krenfen,sans-serif;
     color: whitesmoke;
@@ -220,6 +225,9 @@ body {
         background-size: cover;
         background-position: 50% 50%;
         background-attachment: unset;
+    }
+    .portada {
+        width: 100%;
     }
 }
 
