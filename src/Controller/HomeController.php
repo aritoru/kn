@@ -22,7 +22,7 @@ class HomeController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
         $announces = $entityManager->getRepository(Announce::class)->findBy([],['date' => 'DESC'],3);
-        return $this->render('home/home.html.twig', ['announces' => $announces]);
+        return $this->render('home/home.html.twig', ['announces' => $announces, 'appId' => getenv('facebookAppId')]);
     }
     /**
      * @Route("/band", name="band")
