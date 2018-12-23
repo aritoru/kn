@@ -1,0 +1,21 @@
+{% extends('base.html.twig') %}
+{% block body %}
+
+
+    <div class="container content">
+
+        <div class="row jumbotron transparent">
+            <div class="col">
+
+                <div class="row">
+                    {% for product in products %}
+                        {{ include('/partials/_product.html.twig', {'product':product}) }}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

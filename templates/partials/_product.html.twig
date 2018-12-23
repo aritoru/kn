@@ -1,0 +1,24 @@
+
+
+<div class="col-sm">
+    <div class="card center shadow-lg">
+        <div class="card-img-top-container-store">
+            <img class="card-img-top-store" src="{{ product.imageUrl }}" alt="Card image cap">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <p class="card-text">{{ product.resume }}</p>
+            <p class="card-text small">{{ product.content }}</p>
+            <h1><span class="badge badge-dark">{{ product.price }} €</span></h1>
+        </div>
+        <div class="card-footer text-muted">
+
+            {% if product.active %}
+                <a href="{# path('announce_detail', {'id':product.id}) #}#" class="btn btn-primary btn-dark" id="announce-button-{{ product.id }}">comprar</a>
+            {% else %}
+                <a href="#" class="disabled btn btn-primary btn-dark" id="announce-button-{{ product.id }}">no disponible</a>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
