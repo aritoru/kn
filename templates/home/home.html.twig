@@ -15,15 +15,17 @@
     </div>
 </div>
 
-<div class="container content">
+    <div class="container content">
+    <div id="social-stream"></div>
+    </div>
 
+
+    <div class="container content">
     <div class="row jumbotron transparent">
         <div class="col">
 
             <div class="row">
-                {% for announce in announces %}
-                    {{ include('/partials/_announce.html.twig', {'announce':announce}) }}
-                {% endfor %}
+
             </div>
 
             <div class="row">
@@ -42,8 +44,44 @@
 
 {% block javascripts %}
     <script>
-        $(function() {
+        $(document).ready(function($){
+            $('#social-stream').dcSocialStream({
+                feeds: {
+                    twitter: {
+                        id: 'krenfen',
+                        thumb: true
+                    },
+                    facebook: {
+                        id: '285508918233161'
+                    },
+                    instagram: {
+                        id: '!3296591962',
+                        accessToken: '3296591962.0f3199b.41661073f7a74e3d95d4992593185c56',
+                        clientId: '0f3199b4737b4bbdb91e1ba7297713a8',
+                        redirectUrl: 'http://test.krenfen.com'
+                    },
+                    youtube: {
+                        id: 'UCPuoWNy1E8XZvl92qV9QWZQ'
+                    },
 
+                },
+                rotate: {
+                    delay: 0
+                },
+                style: {
+                    layout: 'modern',
+                    colour: 'dark'
+                },
+                twitterId: 'krenfen',
+                control: false,
+                filter: false,
+                wall: true,
+                cache: false,
+                max: 'limit',
+                limit: 3,
+                iconPath: '/social-wall/images/dcsns-dark/',
+                imagePath: '/social-wall/images/dcsns-dark/'
+            });
         });
     </script>
 

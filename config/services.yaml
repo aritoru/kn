@@ -7,6 +7,10 @@ parameters:
     locale: 'en'
     facebook_app_id: '%env(facebookAppId)%'
     facebook_app_secret: '%env(facebookAppSecret)%'
+    twitter_consumer_key: '%env(twitterConsumerApiKey)%'
+    twitter_consumer_secret: '%env(twitterConsumerApiSecret)%'
+    twitter_oauth_access_token: '%env(twitterConsumerAccessToken)%'
+    twitter_oauth_access_token_secret: '%env(twitterConsumerAccessSecret)%'
 
 services:
     # default configuration for services in *this* file
@@ -36,3 +40,10 @@ services:
         arguments:
             $appId: '%facebook_app_id%'
             $appSecret: '%facebook_app_secret%'
+
+    App\Service\TwitterService:
+        arguments:
+            $twitterConsumerApiKey: '%twitter_consumer_key%'
+            $twitterConsumerApiSecret: '%twitter_consumer_secret%'
+            $twitterConsumerAccessToken: '%twitter_oauth_access_token%'
+            $twitterConsumerAccessSecret: '%twitter_oauth_access_token_secret%'

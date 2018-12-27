@@ -38,8 +38,8 @@
 						out: 'intro,thumb,text,share',
 						retweets: false,
 						replies: false,
-						images: 'large', // large w: 786 h: 346, thumb w: 150 h: 150, medium w: 600 h: 264, small w: 340 h 150
-						url: '/api/twitter',
+						images: '', // large w: 786 h: 346, thumb w: 150 h: 150, medium w: 600 h: 264, small w: 340 h 150
+						url: 'twitter.php',
 						icon: 'twitter.png'
 					},
 					google: {
@@ -168,7 +168,7 @@
 					layout: 'classic',
 					colour: 'light'
 				},
-				dates: 'min,mins,hr,hrs,día,días,semana,semanas,mes,meses,año,años',
+				dates: 'min,mins,hr,hrs,day,days,week,weeks,month,months,year,years',
 				transition: '0.8s',
 				cache: true,
 				container: 'dcsns',
@@ -372,7 +372,6 @@
 				var rts = o.retweets == false ? '+exclude:retweets' : '' ;
 				url = url1 + 'url=search&q='+cq[1]+'&count='+n;
 			}
-                console.log(url);
 			break;
 
 			case 'google': 
@@ -493,8 +492,6 @@
 				url += '/locations/'+url1+'/media/recent';
 				break;
 			}
-
-
 			if(o.accessToken == '' && ts == 0){
 				if (location.hash) {
 					o.accessToken = location.hash.split('=')[1] ;
@@ -503,7 +500,6 @@
 				}
 			}
 			url += '?access_token='+o.accessToken+'&client_id='+o.clientId+'&count='+n+qs;
-                console.log(url);
 			break;
 		}
 		var dataType = type == 'twitter' || type == 'facebook' || type == 'rss' || type == 'pinterest' || type == 'dribbble' ? 'json' : 'jsonp';
@@ -1054,8 +1050,7 @@
                             fuzzy += (xj2 == 1) ? ' + 1 '+n2 : ' + '+xj2+' '+n2 ;
                         }
                     }
-					//fuzzy += ' ago';
-
+					fuzzy += ' ago';
             return fuzzy;
             }
         }

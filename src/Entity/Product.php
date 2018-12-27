@@ -41,11 +41,16 @@ class Product
      */
     private $price;
 
-
     /**
      * @ORM\Column(type="boolean")
      */
     private $active;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $show;
+
 
     public function getId(): ?int
     {
@@ -141,6 +146,25 @@ class Product
         $this->price = $price;
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getShow()
+    {
+        return $this->show;
+    }
+
+    /**
+     * @param mixed $show
+     * @return Product
+     */
+    public function setShow($show)
+    {
+        $this->show = $show;
+        return $this;
+    }
+
 
 
 

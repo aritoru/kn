@@ -1,3 +1,4 @@
+const $ = require('jquery');
 /*
  * jQuery appear plugin
  *

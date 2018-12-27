@@ -9,7 +9,9 @@
 
                 <div class="row">
                     {% for product in products %}
-                        {{ include('/partials/_product.html.twig', {'product':product}) }}
+                        {% if product.show %}
+                            {{ include('/partials/_product.html.twig', {'product':product}) }}
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>

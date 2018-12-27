@@ -249,6 +249,22 @@ body {
     font-weight: bolder;
 }
 
+.dcsns-li {
+    font-family: futura-pt,sans-serif !important;
+}
+
+.dcsns {
+    background: transparent !important;
+}
+
+.section-intro {
+    height: auto !important;
+    font-family: 'Krenfen',sans-serif !important;
+}
+
+.section-title, .twitter-user {
+    font-family: 'Krenfen',sans-serif !important;
+}
 
 @media (max-width: 576px) {
     .paral {
@@ -260,6 +276,10 @@ body {
     .portada {
         width: 100%;
     }
+    .dcsns-li {
+        width: 100% !important;
+    }
+
 }
 
 @media (min-width: 577px) and (max-width: 1000px) {
@@ -268,6 +288,10 @@ body {
         min-height: 200px;
         background-size: contain;
     }
+    .dcsns-li {
+        width: 45% !important;
+    }
+
 }
 
 @media (min-width: 1001px) {
@@ -275,5 +299,8 @@ body {
     .paral {
         min-height: 600px;
         background-size: cover;
+    }
+    .dcsns-li {
+        width: 20% !important;
     }
 }

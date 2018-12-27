@@ -590,7 +590,7 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@symfony/webpack-encore@^0.22.0":
+"@symfony/webpack-encore@^0.22.2":
   version "0.22.2"
   resolved "https://registry.yarnpkg.com/@symfony/webpack-encore/-/webpack-encore-0.22.2.tgz#036cffc86e2f4da2a194b5eabc2409c4ffe0d31b"
   integrity sha512-lJR9GhhbuNmyN1NWx8o4xL+MsxPFv6JZF6h3xMGw8tNks53xzYqagTC4WeW3mL5d7i0WJdpKfgBsRth7nFF8Cg==
