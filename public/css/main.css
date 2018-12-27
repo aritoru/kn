@@ -144,7 +144,7 @@ body {
     height: 0;
     padding: 56.25% 0 0 0;
     overflow: hidden;
-    background: grey;
+    background: black;
     min-height: 200px;
     border-radius: 5px 5px 0 0;
     box-shadow: 0px -4px 5px 9px rgba(0,0,0,0.5);
@@ -236,6 +236,10 @@ body {
 
 .paralsec {
     background-image: url("/img/band2.jpg");
+}
+
+.paralcontact {
+    background-image: url("/img/contact.png");
 }
 
 .announce_header {
