@@ -17,7 +17,7 @@ class ApiController extends AbstractController
      */
     public function facebook(FacebookService $facebookService)
     {
-        return $facebookService->run();
+        return $this->render('api/response.html.twig', ['response' => $facebookService->run()]);
     }
 
     /**

@@ -28,7 +28,8 @@ class FacebookService
         ini_set('display_errors', '0');
         error_reporting(E_ALL | E_STRICT);
 
-        $app_access_token = $this->appId . '|' . $this->appSecret;
+        $app_access_token = $this->appSecret;
+        //$app_access_token = $this->appId . '|' . $this->appSecret;
         $page_id = isset($_GET['id']) ? $_GET['id'] : '';
         $limit = isset($_GET['limit']) ? $_GET['limit'] : 20;
         $limit = $limit > 50 ? 50 : $limit;
