@@ -1,0 +1,149 @@
+<html>
+<head>
+<link href="http://test.krenfen.com/fonts/Krenfen-Regular.otf" rel="stylesheet" type="text/css">
+<style type="text/css">
+    @font-face {
+        font-family: 'Krenfen';
+        src: url('http://test.krenfen.com/fonts/Krenfen-Regular.otf')
+    }
+
+    .container {
+        margin:0;
+        width:100%;
+        align-content: center;
+        text-align: center;
+    }
+
+    .table-body {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        font-family: "Ubuntu", sans-serif !important;
+    }
+
+    .table-body p {
+        text-align: center;
+        padding-top:20px;
+        padding-bottom:20px;
+        width: 100%;
+    }
+
+    .table-body h1 {
+        text-align: center;
+        background: black !important;
+        color: white !important;
+        font-family: "Krenfen", "Ubuntu", sans-serif !important;
+        padding-top:20px;
+        padding-bottom:20px;
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .table-body h2 {
+        font-family: "Krenfen", "Ubuntu", sans-serif !important;
+    }
+
+    .table-body ul {
+        list-style-type:none;
+    }
+
+    .resume {
+        width: 100%;
+        background-color: lightgray;
+        border-radius: 20px;
+    }
+
+    .resume td {
+        width: 50%;
+        padding: 5px;
+        text-align: left;
+    }
+
+    .resume .bandlead {
+        text-align: right;
+    }
+
+    .resume .step {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .bandlead {
+        text-align: right;
+    }
+
+    .btn {
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+    .btn:not(:disabled):not(.disabled) {
+        cursor: pointer;
+    }
+    .btn-primary, .btn-primary:visited, .btn-primary:active {
+        background: darkred;
+        border-color: firebrick;
+        font-family: Krenfen, sans-serif;
+    }
+    a {
+        color:white;
+        text-decoration: none;
+        background-color: transparent;
+
+    }
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="table-body">
+
+            <h1>¡Estás a un paso de adquirir tu {{ purchase.product.title }}!</h1>
+            <h3>¡Hola {{ purchase.name|split(' ')|first }}! Hemos recibido tu pedido.</h3>
+            <h2>resumen de tu pedido</h2>
+            <table class="resume">
+                <tr>
+                <td class="bandlead"><strong>{{ purchase.product.title|upper }}</strong>:</td><td>{{ purchase.product.resume }}</td>
+                </tr>
+                <tr>
+                <td class="bandlead"><strong>PRECIO:</strong></td><td>{{ purchase.product.price }} €</td>
+                </tr>
+                <tr>
+                    <td class="bandlead"><strong>CÓDIGO DE RESERVA:</strong></td><td>{{ purchase.uid }}</td>
+                </tr>
+            </table>
+            <h2>¿Cómo efectúo el pago?</h2>
+            <table class="resume">
+                <tr><td class="step">El pago de tu <strong>{{ purchase.product.title|upper }}</strong> se realiza mediante transferencia bancaria.</td></tr>
+                <tr><td class="step">Debes enviar una transferencia bancaria por valor de <strong>{{ purchase.product.price }} €</strong> a la cuenta:</td></tr>
+                <tr><td class="step"><strong>{{ account }}</strong></td></tr>
+                <tr><td class="step">Indicando en el asunto tu código de reserva: <strong>{{ purchase.uid }}</strong></td></tr>
+
+
+            </table>
+            <h3>Nos pondremos en contacto contigo para hacerte llegar tu pedido en cuanto esté disponible.</h3>
+            <p><a class="btn btn-primary" href="{{ path('purchase', {'id':purchase.id}) }}">ver tu pedido en la web</a></p>
+
+
+            <h1>
+                ¡Muchas gracias!
+                <hr>
+                KRPNFPN
+            </h1>
+
+        </div>
+    </div>
+</body>

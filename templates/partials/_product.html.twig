@@ -14,7 +14,7 @@
         <div class="card-footer text-muted">
 
             {% if product.active %}
-                <a href="{# path('announce_detail', {'id':product.id}) #}#" class="btn btn-primary btn-dark" id="announce-button-{{ product.id }}">comprar</a>
+                <a href="{{ path('product', {'id':product.id}) }}" class="btn btn-primary btn-dark" id="announce-button-{{ product.id }}">comprar</a>
             {% else %}
                 <a href="#" class="disabled btn btn-primary btn-dark" id="announce-button-{{ product.id }}">no disponible</a>
             {% endif %}
