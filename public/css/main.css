@@ -170,7 +170,7 @@ body {
 .band-photo {
     background: url("../img/band.jpg") no-repeat top center;
     background-size: cover;
-    box-shadow: inset -8px -30px 20px black;
+    box-shadow: inset 0px 0px 20px 20px rgba(0,0,0,1);
     min-height: 200px;
 }
 
@@ -236,10 +236,12 @@ body {
 
 .paralsec {
     background-image: url("/img/band2.jpg");
+    box-shadow: inset 0px 0px 20px 20px rgba(0,0,0,1);
 }
 
 .paralcontact {
     background-image: url("/img/contact.png");
+    box-shadow: inset 0px 0px 20px 20px rgba(0,0,0,1);
 }
 
 .announce_header {
