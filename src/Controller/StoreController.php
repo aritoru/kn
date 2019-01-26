@@ -60,7 +60,12 @@ class StoreController extends AbstractController
                     ->setBody(
                         $this->renderView(
                             'emails/purchase.html.twig',
-                            array('purchase' => $purchase,'account' => getenv('bankAccount'))
+                            array(
+                                'purchase' => $purchase,
+                                'account' => getenv('bankAccount'),
+                                'paypal' => getenv('paypalAccount'),
+                                'bizum' => getenv('bizumAccount')
+                            )
                         ),
                         'text/html'
                     )

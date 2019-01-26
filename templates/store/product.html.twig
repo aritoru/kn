@@ -21,8 +21,9 @@
                     </ul>
                     <h2 class="title">¿Cómo efectúo el pago?</h2>
                     <ul>
-                        <li class="bandlead">El pago de tu <strong>{{ purchase.product.title|upper }}</strong> se realiza mediante transferencia bancaria.</li>
+                        <li class="bandlead">El pago de tu <strong>{{ purchase.product.title|upper }}</strong> se realiza mediante transferencia bancaria, Paypal o Bizum.</li>
                         <li class="bandlead">Revisa tu email. Hemos enviado un correo electrónico a la dirección que nos has facilitado con las instrucciones continuar con la compra de tu <strong>{{ purchase.product.title|upper }}</strong>.</li>
+                        <li class="bandlead">Los productos pueden ser entregados en mano o enviados fuera de Madrid. De ser necesario realizar el envio, los gastos están incluídos para Península y Baleares.</li>
                     </ul>
                     <h2 class="title">¡Gracias!</h2>
                 </div>
@@ -31,6 +32,7 @@
         {% else %}
             <div class="row jumbotron transparent">
                 <div class="col">
+                        <h1 class="title display-6">tus datos</h1>
                         {{ form_start(form, {'attr': {'class': 'kn-form'}}) }}
                         {{ form_widget(form) }}
                         {{ form_end(form) }}
