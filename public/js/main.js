@@ -5,7 +5,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var tv,
     playerDefaults = {autoplay: 0, autohide: 1, modestbranding: 1, rel: 0, showinfo: 0, controls: 0, disablekb: 1, enablejsapi: 0, iv_load_policy: 3};
 var vid = [
-        {'videoId': 'Xe2w_sP7I6k', 'startSeconds': 20, 'endSeconds': 690, 'suggestedQuality': 'hd720'},
+        {'videoId': 'rLzfIzoRz0A', 'startSeconds': 20, 'endSeconds': 690, 'suggestedQuality': 'hd720'},
 
 
 

@@ -314,3 +314,15 @@ body {
 .kn-form label{
     color:white;
 }
+
+.credits {
+    font-size: small;
+    text-align: right;
+    position: absolute;
+    right: 8px;
+    bottom: 2px;
+}
+
+.darkredlink, .darkredlink:visited, .darkredlink:active {
+    color: darkred;
+}
