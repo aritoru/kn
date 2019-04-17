@@ -89,11 +89,29 @@ body {
     color: #eeeeee;
 }
 
+.margin-right {
+    margin-right: 15px;
+}
+
 .btn-primary, .btn-primary:visited, .btn-primary:active {
     background: darkred;
     border-color: firebrick;
     font-family: Krenfen,sans-serif;
 }
+
+.btn-spotify, .btn-spotify:visited, .btn-spotify:active {
+    background: #1db954;
+    border-color: #1db954;
+    color: white;
+    font-family: Lato,sans-serif;
+}
+
+.btn-itunes, .btn-itunes:visited, .btn-itunes:active {
+    background: #0070c9;
+    border-color: #07c;
+    font-family: Montserrat,sans-serif;
+}
+
 
 .btn-primary:hover {
     background: grey;
