@@ -32,6 +32,26 @@ class Purchase
     private $name;
 
     /**
+     * @ORM\Column(type="string", length=1024)
+     */
+    private $address;
+
+    /**
+     * @ORM\Column(type="string", length=1024)
+     */
+    private $city;
+
+    /**
+     * @ORM\Column(type="string", length=1024)
+     */
+    private $zipcode;
+
+    /**
+     * @ORM\Column(type="string", length=1024)
+     */
+    private $province;
+
+    /**
      * @ORM\Column(type="datetime", length=1024)
      */
     private $createdAt;
@@ -192,6 +212,78 @@ class Purchase
     public function setUid($uid)
     {
         $this->uid = $uid;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param mixed $address
+     * @return Purchase
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * @param mixed $city
+     * @return Purchase
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getZipcode()
+    {
+        return $this->zipcode;
+    }
+
+    /**
+     * @param mixed $zipcode
+     * @return Purchase
+     */
+    public function setZipcode($zipcode)
+    {
+        $this->zipcode = $zipcode;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProvince()
+    {
+        return $this->province;
+    }
+
+    /**
+     * @param mixed $province
+     * @return Purchase
+     */
+    public function setProvince($province)
+    {
+        $this->province = $province;
         return $this;
     }
 
