@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Announce;
+use App\Entity\TourDate;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -24,6 +25,19 @@ class HomeController extends AbstractController
         $announces = $entityManager->getRepository(Announce::class)->findBy([],['date' => 'DESC'],3);
         return $this->render('home/home.html.twig', ['announces' => $announces, 'facebookAppId' => getenv('facebookAppId')]);
     }
+
+
+    /**
+     * @Route("/tour", name="tour")
+     */
+    public function tour()
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $dates = $entityManager->getRepository(TourDate::class)->findBy([],['date' => 'ASC']);
+        return $this->render('home/tour.html.twig', ['dates' => $dates]);
+    }
+
+
     /**
      * @Route("/band", name="band")
      */

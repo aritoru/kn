@@ -5,6 +5,7 @@ namespace App\Twig;
 use App\Twig\AppRuntime;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
+use Twig\TwigFunction;
 
 class AppExtension extends AbstractExtension
 {
@@ -16,4 +17,12 @@ class AppExtension extends AbstractExtension
             new TwigFilter('pathize', array(AppRuntime::class, 'pathizeFilter')),
         );
     }
+
+    public function getFunctions()
+    {
+        return array(
+            new TwigFunction('getGallery', array(AppRuntime::class, 'getGallery'))
+        );
+    }
+
 }

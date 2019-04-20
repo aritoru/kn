@@ -57,26 +57,12 @@ body {
     color: #ffffff;
 }
 
-.announce_body {
-    background: black;
-}
+
 
 .portada {
     width: 50%;
     border: darkred;
 }
-
-.announce_title {
-    font-family: Krenfen,sans-serif;
-    color: whitesmoke;
-}
-
-.announce_date {
-    font-family: Krenfen,sans-serif;
-    color: whitesmoke;
-    font-size: small;
-}
-
 .bandlead {
     color: #eeeeee;
 }
@@ -262,11 +248,7 @@ body {
     box-shadow: inset 0px 0px 20px 20px rgba(0,0,0,1);
 }
 
-.announce_header {
-    min-height: 300px !important;
-    background-position: top center;
-    background-size: cover;
-}
+
 
 .nav-link-active {
     color: darkred !important;
@@ -343,4 +325,71 @@ body {
 
 .darkredlink, .darkredlink:visited, .darkredlink:active {
     color: darkred;
+}
+
+.announce_body {
+    background: black;
+}
+
+/***********************************************************
+GALLERY
+ */
+
+.gallery-photo {
+    margin: 5px;
+    max-width: 260px;
+}
+
+.flex-column {
+
+}
+
+.scale {
+    transform: scaleY(1.05);
+    padding-top: 5px;
+}
+
+/***********************************************************
+STREAM
+ */
+
+.modern .stream li .section-text, .modern .stream li .section-user, .modern .stream li .section-title {
+    padding: 0 10px !important;
+    margin: 0 0 10px 0 !important;
+    max-height: 300px;
+}
+
+
+/***********************************************************
+TOUR
+ */
+
+.tourdate_header {
+    min-height: 280px !important;
+    max-height: 280px;
+}
+
+.tourdate_body {
+    background: black;
+    border: darkred 1px dotted;
+    border-radius: 5px;
+    padding: 10px !important;
+    min-height: 300px !important;
+    width: 80%;
+}
+
+.tourdate_body p {
+    font-family: Krenfen,sans-serif;
+    color: darkgrey;
+}
+
+.tourdate_title {
+    font-family: Krenfen,sans-serif;
+    color: whitesmoke;
+}
+
+.tourdate_date {
+    font-family: Krenfen,sans-serif;
+    color: darkred;
+    font-weight: bold;
 }

@@ -1,16 +1,32 @@
 <hr>
-<div class="row justify-content-center">
-    <div class="col-md-8">
-        <div class="row">
-            <a href="/img/gallery/band.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
-                <img src="/img/gallery/band.jpg" class="img-fluid">
+{% set gallery = getGallery() %}
+{% set i = 1 %}
+{% set countPerColumn = (gallery|length)/3 %}
+<div class="text-center center">
+
+    <div class="d-flex flex-row  flex-wrap justify-content-center">
+
+        {% for img in gallery %}
+
+
+{% if i == 1 %}
+        <div class="d-flex flex-column">
+{% endif %}
+
+
+            <a href="/img/gallery/{{ img }}" data-toggle="lightbox" data-gallery="example-gallery" class="gallery-photo">
+                <img src="/img/gallery/{{ img }}" class="img-fluid">
             </a>
-            <a href="/img/gallery/banner.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
-                <img src="/img/gallery/banner.png" class="img-fluid">
-            </a>
-            <a href="/img/gallery/grupo533.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
-                <img src="/img/gallery/grupo533.jpg" class="img-fluid">
-            </a>
-        </div>
+
+            {% set i = i + 1 %}
+
+            {% if i == countPerColumn + 1  %}
+                </div>
+                {% set i = 1 %}
+            {% endif %}
+
+        {% endfor %}
+
     </div>
 </div>
+

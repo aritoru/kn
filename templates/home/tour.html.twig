@@ -1,0 +1,46 @@
+{% extends('base.html.twig') %}
+{% block tour_block %} nav-link-active {% endblock %}
+{% block body %}
+
+    {% for tourDate in dates %}
+        <div class="container">
+
+
+    <div class="container content center jumbotron tourdate_body">
+        <div class="row">
+            <div class="col-md-12 col-lg-3 col-sm-12 center">
+                {% if tourDate.poster %}
+                <a href="/img/posters/{{ tourDate.poster }}" data-toggle="lightbox" data-title="{{ tourDate.title }}" data-footer="{{ tourDate.date|date('d-m-Y H:i') }}">
+                    <img class="img-fluid tourdate_header" src="/img/posters/{{ tourDate.poster }}"/>
+                </a>
+                {% endif %}
+            </div>
+            <div class="col-md-12 col-lg-9 col-sm-12 center">
+                <hr>
+                <h4 class="tourdate_date">{{ tourDate.date|date('d-m-Y H:i') }}</h4>
+                <h3 class="tourdate_title display-6">{{ tourDate.title }}</h3>
+
+                <p>{{ tourDate.description|lower }}</p>
+                {% if tourDate.price == 0 %}
+                    <h4 class="tourdate_title display-10">entrada gratuíta</h4>
+                {% else %}
+                    <h4 class="tourdate_title display-10">entrada {{ tourDate.price }} €</h4>
+                {% endif %}
+                <p>
+                {% if tourDate.placeLink %}
+                    <a class="darkredlink" href="{{ tourDate.placeLink }}">
+                {% endif %}
+                        {{ tourDate.place|lower }} ({{ tourDate.city|lower }})
+                {% if tourDate.placeLink %}
+                    </a>
+                {% endif %}
+                </p>
+
+            </div>
+
+        {#<a href="{{ path('tourdate_detail', {'id':tourDate.id}) }}" class="btn btn-primary">Leer más</a>#}
+        </div>
+    </div>
+        </div>
+    {% endfor %}
+{% endblock %}
