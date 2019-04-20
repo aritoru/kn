@@ -116,7 +116,7 @@
         <div class="table-body">
 
             <h1>¡Estás a un paso de adquirir tu {{ purchase.product.title }}!</h1>
-            <h3>¡Hola {{ purchase.user.name|split(' ')|first }}! Hemos recibido tu pedido.</h3>
+            <h3>¡Hola {{ purchase.name|split(' ')|first }}! Hemos recibido tu pedido.</h3>
             <h2>resumen de tu pedido</h2>
             <table class="resume">
                 <tr>
@@ -126,7 +126,7 @@
                 <td class="bandlead"><strong>PRECIO:</strong></td><td>{{ purchase.product.price }} €</td>
                 </tr>
                 <tr>
-                    <td class="bandlead"><strong>CÓDIGO DE PEDIDO:</strong></td><td>{{ purchase.uid }}</td>
+                    <td class="bandlead"><strong>CÓDIGO DE RESERVA:</strong></td><td>{{ purchase.uid }}</td>
                 </tr>
             </table>
             <h2>¿Cómo efectúo el pago?</h2>
@@ -136,13 +136,17 @@
                 <tr><td class="step"><h2>transferencia bancaria</h2></td></tr>
                 <tr><td class="step">Puedes enviar una <strong>transferencia bancaria</strong> por valor de <strong>{{ purchase.product.price }} €</strong> a la cuenta:</td></tr>
                 <tr><td class="step"><strong>{{ account }}</strong></td></tr>
-                <tr><td class="step">Indicando en el asunto tu código de pedido: <strong>{{ purchase.uid }}</strong></td></tr>
+                <tr><td class="step">Indicando en el asunto tu código de reserva: <strong>{{ purchase.uid }}</strong></td></tr>
                 <tr><td class="step"><h2><hr></h2></td></tr>
                 <tr><td class="step"><h2>paypal</h2></td></tr>
                 <tr><td class="step">Puedes realizar una transferencia por <strong>Paypal</strong> por valor de <strong>{{ purchase.product.price }} €</strong> al email:</td></tr>
                 <tr><td class="step"><strong>{{ paypal }}</strong></td></tr>
-                <tr><td class="step">Indicando en el asunto tu código de pedido: <strong>{{ purchase.uid }}</strong></td></tr>
+                <tr><td class="step">Indicando en el asunto tu código de reserva: <strong>{{ purchase.uid }}</strong></td></tr>
                 <tr><td class="step"><h2><hr></h2></td></tr>
+                <tr><td class="step"><h2>Bizum</h2></td></tr>
+                <tr><td class="step">Puedes realizar una transferencia por <strong>Bizum</strong> por valor de <strong>{{ purchase.product.price }} €</strong> al teléfono:</td></tr>
+                <tr><td class="step"><strong>{{ bizum }}</strong></td></tr>
+                <tr><td class="step">Indicando en el asunto tu código de reserva: <strong>{{ purchase.uid }}</strong></td></tr>
 
             </table>
             <h3>Nos pondremos en contacto contigo para hacerte llegar tu pedido en cuanto esté disponible.</h3>

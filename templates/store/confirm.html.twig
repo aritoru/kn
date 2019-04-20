@@ -1,0 +1,35 @@
+{% extends('base.html.twig') %}
+{% block body %}
+
+
+    <div class="container content">
+
+            <div class="row jumbotron transparent">
+                <div class="col">
+                    {% for message in app.flashes('notice') %}
+                        <div class="alert alert-success">
+                            <strong>¡Todo correcto!</strong> {{ message }}
+                        </div>
+                    {% endfor %}
+
+                    <h1 class="title display-6">resumen de tu pedido</h1>
+                    <ul>
+                    <li class="bandlead"><strong>{{ purchase.product.title|upper }}</strong>: {{ purchase.product.resume }}</li>
+                    <li class="bandlead"><strong>PRECIO:</strong> {{ purchase.product.price }} €</li>
+                    <li class="bandlead"><strong>CÓDIGO DE PEDIDO:</strong> {{ purchase.uid }}</li>
+                    </ul>
+                    <h2 class="title">¿Cómo efectúo el pago?</h2>
+                    <ul>
+                        <li class="bandlead">El pago de tu <strong>{{ purchase.product.title|upper }}</strong> se realiza mediante transferencia bancaria, Paypal o Bizum.</li>
+                        <li class="bandlead">Revisa tu email. Hemos enviado un correo electrónico a la dirección que nos has facilitado con las instrucciones continuar con la compra de tu <strong>{{ purchase.product.title|upper }}</strong>.</li>
+                        <li class="bandlead">Los productos pueden ser entregados en mano. De ser necesario realizar el envio, los gastos están incluídos para Península y Baleares.</li>
+                    </ul>
+                    <h2 class="title">¡Gracias!</h2>
+                </div>
+            </div>
+
+    </div>
+
+
+
+{% endblock %}

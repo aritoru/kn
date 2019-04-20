@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -75,6 +76,23 @@ class User implements UserInterface
      */
     private $size;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Purchase", mappedBy="user")
+     */
+    private $purchases;
+
+    public function __construct()
+    {
+        $this->purchases = new ArrayCollection();
+    }
+
+    /**
+     * @return ArrayCollection|Purchase[]
+     */
+    public function getPurchases(): ArrayCollection
+    {
+        return $this->purchases;
+    }
 
     public function getId(): ?int
     {
@@ -298,6 +316,8 @@ class User implements UserInterface
         return $this;
     }
 
-
+    public function getCompleteAddress() {
+        return $this->address.", ".$this->city." ".$this->zipcode." (".$this->province.")";
+    }
 
 }
