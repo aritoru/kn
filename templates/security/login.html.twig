@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<div class="container content">
+    <div class="row jumbotron transparent">
+        <div class="col">
+            <form method="post" class="kn-form">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                <h1 class="title display-6">tus datos</h1>
+                <div class="form-group">
+                <label for="inputEmail" class="required">email</label>
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="email" required autofocus>
+                </div>
+                <div class="form-group">
+                <label for="inputPassword" class="required">password</label>
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="password" required>
+                </div>
+                <div class="form-group">
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}"
+                >
+
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" name="_remember_me"> Recuérdame
+                        </label>
+                    </div>
+                </div>
+
+                <button class="btn btn-lg btn-primary" type="submit">
+                    acceder
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
