@@ -1,15 +1,16 @@
 <hr>
 {% set gallery = getGallery() %}
 {% set i = 1 %}
-{% set countPerColumn = (gallery|length)/3 %}
+{% set j = 1 %}
+{% set countPerColumn = ((gallery|length)/3)|round %}
+
 <div class="text-center center">
 
     <div class="d-flex flex-row  flex-wrap justify-content-center">
 
         {% for img in gallery %}
 
-
-{% if i == 1 %}
+{% if j == 1 %}
         <div class="d-flex flex-column">
 {% endif %}
 
@@ -18,12 +19,15 @@
                 <img src="/img/gallery/{{ img }}" class="img-fluid">
             </a>
 
-            {% set i = i + 1 %}
 
-            {% if i == countPerColumn + 1  %}
+
+            {% if i is divisible by(countPerColumn) or i == gallery|length %}
                 </div>
-                {% set i = 1 %}
+                {% set j = 0 %}
             {% endif %}
+
+            {% set i = i + 1 %}
+            {% set j = j + 1 %}
 
         {% endfor %}
 
