@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
-
 {% block body %}
 <div class="container content">
     <div class="row jumbotron transparent">
@@ -35,6 +33,9 @@
                 <button class="btn btn-lg btn-primary" type="submit">
                     acceder
                 </button>
+
+                <label>¿Aún no tienes cuenta en la zona fan?</label>
+                <a class="px-2 btn btn-primary btn-dark" href="{{ path('app_register') }}">¡registrate!</a>
             </form>
         </div>
     </div>

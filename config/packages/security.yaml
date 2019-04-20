@@ -32,6 +32,12 @@ security:
             form_login: true
             # https://symfony.com/doc/current/security/form_login_setup.html
 
+            logout:
+                path:   app_logout
+
+                # where to redirect after logout
+                target: home
+
             guard:
                 authenticators:
                     - App\Security\AppCustomAuthenticator

@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 
@@ -39,6 +40,9 @@ class RegistrationController extends AbstractController
             $entityManager->flush();
 
             // do anything else you need here, like send an email
+            $token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
+            $this->container->get('security.token_storage')->setToken($token);
+            $this->container->get('session')->set('_security_main', serialize($token));
 
             return $guardHandler->authenticateUserAndHandleSuccess(
                 $user,
