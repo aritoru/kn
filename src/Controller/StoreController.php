@@ -138,7 +138,9 @@ class StoreController extends AbstractController
 
         return $this->render('emails/purchase.html.twig', array(
             'purchase' => $purchase,
-            'account' => getenv('bankAccount')
+            'account' => getenv('bankAccount'),
+            'paypal' => getenv('paypalAccount'),
+            'bizum' => getenv('bizumAccount'),
         ));
     }
 
