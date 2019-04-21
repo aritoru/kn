@@ -64,9 +64,9 @@ class Product
     }
 
     /**
-     * @return ArrayCollection|Purchase[]
+     * @return Purchase[]
      */
-    public function getPurchases(): ArrayCollection
+    public function getPurchases()
     {
         return $this->purchases;
     }

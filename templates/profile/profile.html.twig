@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container content">
+        <div class="row jumbotron transparent">
+            <div class="col">
+                {% for message in app.flashes('notice') %}
+                    <div class="alert alert-success">
+                        <strong>¡Todo correcto!</strong> {{ message }}
+                    </div>
+                {% endfor %}
+                <h1 class="title display-6">tus datos</h1>
+
+                {{ form_start(form, {'attr': {'class': 'kn-form'}}) }}
+                {{ form_widget(form) }}
+
+                <button class="btn btn-lg btn-primary" type="submit">
+                    actualizar
+                </button>
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

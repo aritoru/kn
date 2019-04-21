@@ -93,13 +93,15 @@
                         {{ app.user.email }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="{{ path('profile') }}">mi perfil</a>
+                        <a class="dropdown-item" href="{{ path('profile_purchases') }}">mis pedidos</a>
                         <a class="dropdown-item" href="{{ path('download_disc') }}">descarga digital</a>
                         <a class="dropdown-item" href="{{ path('app_logout') }}">Desconectar</a>
                     </div>
                 </div>
 
             {% else %}
-                <li class="nav-item margin-right"><a class="px-2 btn btn-primary btn-dark" href="{{ path('app_login') }}">tu zona</a></li>
+                <li class="nav-item margin-right"><a class="px-2 btn btn-primary btn-dark" href="{{ path('app_login') }}">mi zona</a></li>
             {% endif %}
 
         </ul>

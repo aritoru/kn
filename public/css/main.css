@@ -393,3 +393,52 @@ TOUR
     color: darkred;
     font-weight: bold;
 }
+
+/****************************************************************
+PURCHASES
+ */
+
+.purchase_container {
+    color: white;
+    border: darkred 1px dotted;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+
+}
+
+table.purchase {
+    width: 100%;
+}
+
+.purchase th {
+    color: white;
+    padding: 5px;
+    padding-left: 15px;
+    text-align: right;
+    vertical-align: top;
+}
+
+.purchase td {
+    color: white;
+    padding: 5px;
+    padding-left: 15px;
+    vertical-align: top;
+
+}
+
+.product_img_container {
+    max-height: 100px;
+    background: #2C2C2C;
+    vertical-align: middle !important;
+}
+
+@media (max-width: 576px) {
+    .product_img_container {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+
+

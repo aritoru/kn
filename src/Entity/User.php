@@ -86,10 +86,7 @@ class User implements UserInterface
         $this->purchases = new ArrayCollection();
     }
 
-    /**
-     * @return ArrayCollection|Purchase[]
-     */
-    public function getPurchases(): ArrayCollection
+    public function getPurchases()
     {
         return $this->purchases;
     }

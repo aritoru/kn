@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container content">
+        <div class="row jumbotron transparent">
+            <div class="col">
+
+                <h1 class="title display-6">tus pedidos</h1>
+
+                {% for purchase in user.purchases  %}
+                    <div class="purchase_container">
+                    <table class="purchase">
+                        <tr>
+                            <td class="product_img_container" rowspan="7"><img class="product_img_container" src="{{ purchase.product.imageUrl }}"></td>
+                            <th class="purchase_resume" colspan="2">#{{ purchase.uid }} ({{ purchase.createdAt|date('d-m-Y') }})</th>
+                        </tr>
+                        <tr>
+                            <th>{{ purchase.product.title|upper }}</th><td>{{ purchase.product.resume }}</td>
+                        </tr>
+                        <tr>
+                            <th>PRECIO</th><td>{{ purchase.product.price }} €</td>
+                        </tr>
+                        <tr>
+                            <th>PAGO RECIBIDO</th><td>{% if purchase.paymentMethod %} Si {% else %} No {% endif %}</td>
+                        </tr>
+                        <tr>
+                            <th>ENVIADO</th><td>{% if purchase.paymentMethod %} Si {% else %} No {% endif %}</td>
+                        </tr>
+                        <tr>
+                            <th>DIRECCIÓN DE ENVÍO</th><td>{{ purchase.user.completeAddress }}</td>
+                        </tr>
+                    </table>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
