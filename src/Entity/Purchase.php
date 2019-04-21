@@ -37,6 +37,16 @@ class Purchase
     private $createdAt;
 
     /**
+     * @ORM\Column(type="string", length=10, nullable=true)
+     */
+    private $paymentMethod;
+
+    /**
+     * @ORM\Column(type="string", length=16, nullable=true)
+     */
+    private $paymentMethodId;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -123,6 +133,42 @@ class Purchase
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPaymentMethod()
+    {
+        return $this->paymentMethod;
+    }
+
+    /**
+     * @param mixed $paymentMethod
+     * @return Purchase
+     */
+    public function setPaymentMethod($paymentMethod)
+    {
+        $this->paymentMethod = $paymentMethod;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPaymentMethodId()
+    {
+        return $this->paymentMethodId;
+    }
+
+    /**
+     * @param mixed $paymentMethodId
+     * @return Purchase
+     */
+    public function setPaymentMethodId($paymentMethodId)
+    {
+        $this->paymentMethodId = $paymentMethodId;
         return $this;
     }
 
