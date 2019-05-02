@@ -33,8 +33,9 @@ class HomeController extends AbstractController
     public function tour()
     {
         $entityManager = $this->getDoctrine()->getManager();
-        $dates = $entityManager->getRepository(TourDate::class)->findBy([],['date' => 'ASC']);
-        return $this->render('home/tour.html.twig', ['dates' => $dates]);
+        $dates = $entityManager->getRepository(TourDate::class)->findBy([],['date' => 'DESC']);
+        $today = new \DateTime();
+        return $this->render('home/tour.html.twig', ['dates' => $dates, 'today' => $today]);
     }
 
 

@@ -394,6 +394,20 @@ TOUR
     font-weight: bold;
 }
 
+.tourdate_soldout {
+    color: black !important;
+    font-family: Impact !important;
+    position: absolute;
+    z-index: 100;
+    font-size: 3em;
+    transform: rotate(-45deg);
+    background: darkred;
+    padding: 5px;
+    margin-left: 10px;
+    bottom: 70px;
+
+}
+
 /****************************************************************
 PURCHASES
  */

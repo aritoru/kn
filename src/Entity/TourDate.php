@@ -61,6 +61,11 @@ class TourDate
      */
     private $city;
 
+    /**
+     * @ORM\Column(type="boolean", length=40, nullable=true)
+     */
+    private $published;
+
 
     /**
      * @return mixed
@@ -242,6 +247,22 @@ class TourDate
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getPublished()
+    {
+        return $this->published;
+    }
 
+    /**
+     * @param mixed $published
+     * @return TourDate
+     */
+    public function setPublished($published)
+    {
+        $this->published = $published;
+        return $this;
+    }
 
 }
