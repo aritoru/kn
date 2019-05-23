@@ -48,7 +48,7 @@
         <img id="fire" class="cover-background" src="/img/fireheader.svg"/>
         <h1 class="cover-heading"><span class="word">KRPNFPN</span></h1>
         <p class="lead">
-            <a href="{{ path('home') }}" class="btn btn-primary btn-lg  btn-dark">entrar</a>
+            <div class="loader"></div>
         </p>
     </main>
 
@@ -75,26 +75,6 @@
 </script>
 <script>
     $(function() {
-        anime.timeline({loop: false})
-            .add({
-                targets: '.cover-heading .word',
-                scale: [14,1],
-                opacity: [0,1],
-                easing: "easeOutCirc",
-                duration: 1800,
-                delay: function(el, i) {
-                    return 800 * i;
-                }
-            }).add({
-            targets: '.lead',
-            opacity: [0,1],
-            easing: "easeOutCirc",
-            duration: 1800,
-            delay: function(el, i) {
-                return 800 * i;
-            }
-        });
-
         anime.timeline({loop: true})
             .add({
                 targets: '#fire',
@@ -111,6 +91,12 @@
         });
 
     });
+
+    // Handler for .ready() called.
+    window.setTimeout(function () {
+        location.href = "/home";
+    }, 5000);
+
 </script>
 </body>
 </html>

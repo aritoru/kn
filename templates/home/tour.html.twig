@@ -1,7 +1,12 @@
 {% extends('base.html.twig') %}
 {% block tour_block %} nav-link-active {% endblock %}
 {% block body %}
+    <div class="container">
+        <div class="alert alert-success center">
+            <strong>¡próximamente más fechas!</strong>
+        </div>
 
+    </div>
     {% for tourDate in dates %}
         {% if tourDate.published %}
         <div class="container">

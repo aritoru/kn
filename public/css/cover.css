@@ -50,7 +50,7 @@ body {
     left: 50%;
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
-    width: 100%;
+    width: 50%;
     opacity: .8;
 }
 
@@ -95,4 +95,32 @@ body {
 .cover .btn-lg {
     padding: .75rem 1.25rem;
     font-weight: 700;
+}
+
+.loader {
+    height: 4px;
+    width: 100%;
+    margin-top: 300px;
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+}
+.loader:before{
+    display: block;
+    position: absolute;
+    content: "";
+    left: -200px;
+    width: 200px;
+    height: 4px;
+    background-color: darkred;
+    animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+    from {left: -200px; width: 30%;}
+    50% {width: 30%;}
+    70% {width: 70%;}
+    80% { left: 50%;}
+    95% {left: 120%;}
+    to {left: 100%;}
 }
