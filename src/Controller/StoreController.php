@@ -74,6 +74,7 @@ class StoreController extends AbstractController
             $message = (new \Swift_Message('Completa tu proceso de compra'))
                 ->setFrom('krenfen@gmail.com')
                 ->setTo($purchase->getUser()->getEmail())
+                ->setBcc('gorkam22@gmail.com')
                 ->setBody(
                     $this->renderView(
                         'emails/purchase.html.twig',
@@ -89,6 +90,7 @@ class StoreController extends AbstractController
             ;
 
             $mailer->send($message);
+
             $this->addFlash(
                 'notice',
                 'Te hemos enviado un email con el método de pago.'
@@ -111,12 +113,9 @@ class StoreController extends AbstractController
      */
     public function purchase($id)
     {
-
         $entityManager = $this->getDoctrine()->getManager();
         $purchase = $entityManager->getRepository(Purchase::class)->find($id);
-
         if ($purchase instanceof Purchase) {
-
             return $this->render('store/product.html.twig', array(
                 'purchase' => $purchase,
                 'sent' => true
