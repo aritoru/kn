@@ -30,6 +30,9 @@
                             <h4 class="tourdate_title display-10">entrada gratuíta</h4>
                         {% else %}
                             <h4 class="tourdate_title display-10">entrada {{ tourDate.price }} €</h4>
+                            {% if tourDate.prePrice %}
+                                <h4 class="tourdate_title display-10">(anticipada {{ tourDate.prePrice }} €)</h4>
+                            {% endif %}
                         {% endif %}
                         <p>
                         {% if tourDate.placeLink %}
